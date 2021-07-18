@@ -1,0 +1,39 @@
+
+<div class="mx-5">
+<div>
+   <h1>{{data[0].name}}</h1>
+   
+</div><br>
+
+   <h5 style="color: brown;">About</h5 >
+   <div [innerHTML]="data[0].about"></div><br>
+
+   <h5 style="color: brown;">Objective</h5>
+    <div [innerHTML]="data[0].objective"></div><br>
+    
+    <h5 style="color: brown;">Agenda</h5>
+    <div [innerHTML]="data[0].agenda"></div><br>
+
+    <h5 style="color: brown;">Highlights</h5>
+    <div [innerHTML]="data[0].highlights"></div><br>
+
+    <h5 style="color: brown;">Eligibility</h5>
+    <div [innerHTML]="data[0].eligibility"></div><br>
+
+    <h5 style="color: brown;">Test Details</h5>
+    <div [innerHTML]="data[0].test"></div><br>
+
+    <h5 style="color: brown;">Course Fee</h5>
+    <div [innerHTML]="data[0].courseFee"></div><br>
+    <h5 style="color: brown;">Refund Policy</h5>
+    <div [innerHTML]="data[0].refundPolicy"></div><br>
+    <h5 style="color: brown;">Important Dates</h5>
+    <div [innerHTML]="data[0].importantDates"></div><br>
+
+    <br>
+    <h3>Question paper link</h3>
+    <button > {{data[0].questionPaperLink}}</button>
+    <h3>Status</h3>
+    <button > {{data[0].status}}</button>
+
+   </div>

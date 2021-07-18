@@ -1,0 +1,105 @@
+<section class="testimonial py-5" id="testimonial">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-4 py-5 bg-primary text-white text-center ">
+                <div class=" ">
+                    <div class="card-body">
+                        <img src="http://www.ansonika.com/mavia/img/registration_bg.svg" style="width:30%">
+                        <h2 class="py-3">Register Here For</h2>
+                        <p>Certified Specialist in Full Stack Development Brochure Download</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 py-4 border">
+                <h4 class="pb-4">Please fill with your details</h4>
+                <form class="form col-md-6 mx-5"  method="POST" #applicantform='ngForm' (ngSubmit)='addapplicant()' enctype="multipart/form-data" >
+                    <div class="form-group pb-2">
+                      <label for="name">Full Name</label>
+                      <input type="text" class="form-control" id="name" name="name" [(ngModel)] ="applicant.name" required>
+                                
+                     </div>
+                     
+                   
+                    <div class="form-group pb-2">
+                      
+                      <label for="email">Email</label>
+                      <input type="text" class="form-control" id="email" name="email" [(ngModel)] ="applicant.email" required>
+                    </div>
+                    <div class="form-group pb-2">
+                      
+                        <label for="phone">Phone</label>
+                        <input type="text" class="form-control" id="phone" name="phone" [(ngModel)] ="applicant.phone" required>
+                      </div>
+                    
+                    <!-- <div class="form-group">
+                      
+                      <label for="employed">Are you Employed?</label>
+                      <input type="text" class="form-control" id="employed" name="employed" [(ngModel)] ="applicant.employed" required>
+                    </div> -->
+
+
+                    <div class="form-group pb-2">
+                        <label for="employed">Are you Employed?</label>
+                        <select id="employed"   name="employed" class="form-control" [(ngModel)]="applicant.employed" required>
+                          <!-- <option value="" disabled selected>Are you Employed?</option> -->
+                          <option value="Yes"> Yes</option>
+                          <option value="No"> No</option>
+                          
+                        </select>
+                      </div>
+                    
+                    <div class="form-group  pb-2">
+                      <label for="qualification">Highest Qualification</label>
+                      <input type="text" class="form-control" id="qualification" name="qualification" [(ngModel)] ="applicant.qualification"  required>
+                    </div>
+
+
+                    <div class="form-group col-md-12  pb-2">
+                        <label for="message">Message</label>
+                        <textarea id="messsage" name="messsage" cols="40" rows="5" [(ngModel)]="applicant.messsage" class="form-control" placeholder="Message"></textarea>
+              </div>
+                   
+                    <button type="submit" [disabled]='applicantform.form.invalid' class="btn btn btn-primary m-2">
+                      Add
+                    </button>
+                  </form>
+
+                <!-- <form #retailform="ngForm" (ngSubmit)="register()"> -->
+                    <!-- <div class="form-row">
+                        <div class="form-group col-md-6 pb-2">
+                          <input id="name" name="name" [(ngModel)]="name"  placeholder="Full Name" class="form-control" type="text" required>
+                        </div> -->
+                        <!-- <div class="form-group col-md-6  pb-2">
+                          <input type="email" class="form-control" name="email" id="email" [(ngModel)]="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group col-md-6  pb-2">
+                            <input type="text" class="form-control" name="highest_qualification" id="highest_qualification" [(ngModel)]="highest_qualification" placeholder="Highest Qualification" required>
+                          </div>
+                      </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6  pb-2">
+                            <input id="phone" name="phone" placeholder="Mobile No." class="form-control" [(ngModel)]="phone" required type="text">
+                        </div>
+                        <div class="form-group col-md-6  pb-2">
+                                  
+                                  <select id="employed"   name="employed" class="form-control" [(ngModel)]="employed" required>
+                                    <option value="" disabled selected>Are you Employed?</option>
+                                    <option value="Yes"> Yes</option>
+                                    <option value="No"> No</option>
+                                    
+                                  </select>
+                        </div>
+                        <div class="form-group col-md-12  pb-2">
+                                  <textarea id="messsage" name="messsage" cols="40" rows="5" [(ngModel)]="messsage" class="form-control" placeholder="Message"></textarea>
+                        </div>
+                    </div> -->
+                                       
+                    <!-- <div class="form-row  pb-2">
+                        <button type="button" class="btn btn-danger">Submit</button>
+                    </div>
+                </form> -->
+            </div>
+        </div>
+    </div>
+</section>
+
