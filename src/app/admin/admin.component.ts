@@ -11,7 +11,7 @@ import * as XLSX from 'xlsx';
 export class AdminComponent implements OnInit {
   fileName= 'ExcelSheet.xlsx';  
   count=0;
-
+ active = 'top';
  data=[{
      submittedDate:'',
      name:'',

@@ -11,15 +11,7 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./retail.component.css']
 })
 export class RetailComponent implements OnInit {
-//  applicant={
-//   name:'',
-//   phone:'',
-//   email:'',
-//   employed:'',
-//   highest_qualification:'',
-//   messsage:'',
-//   //downloaded:false
-//   };
+
 applicant={
   
   name:'',
@@ -40,14 +32,7 @@ count=0;
    
    
   }
-  // register(){
-  // alert("Submitted");
-  //   console.log(this.name);
-  //        this._courseService.retailBrouchreRequest(this.name);
-
-
-  // }
-
+  
   addapplicant():void{
 
    
@@ -58,6 +43,30 @@ count=0;
       this._router.navigate(['/admin']);
      
      
+   }
+  msg='';
+   emailValidate(event:any){
+
+    const regex = new RegExp('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$');
+    if(!regex.test(event.target.value)){
+     this. msg='Invalid Email ID'
+    }
+    else{
+      this. msg=''
+    }
+   }
+   
+   msg1='';
+   phoneValidation(event:any){
+    const regex = new RegExp('^[0-9 ]{10}');
+    if(!regex.test(this.applicant.phone)){
+     this. msg1='Invalid Phone Number'
+    }
+    else{
+      this. msg1=''
+    }
+
+
    }
   
 

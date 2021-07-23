@@ -21,6 +21,7 @@ course={
   agenda:'',
   highlights:'',
   eligibility:'',
+  age:'',
   test:'',
   courseFee:'',
   refundPolicy:'',
@@ -28,7 +29,8 @@ course={
   img1:'',
   img2:'',
   questionPaperLink:'',
-  status:''
+  status:'',
+  brochureTitle:''
 }
 
 public tools: object = {
@@ -37,22 +39,22 @@ public tools: object = {
          'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
          'LowerCase', 'UpperCase', '|', 'Undo', 'Redo', '|',
          'Formats', 'Alignments', '|', 'OrderedList', 'UnorderedList', '|',
-         'Indent', 'Outdent', '|', 'CreateLink','CreateTable',
-         'Image', '|', 'ClearFormat', 'Print', 'SourceCode', '|', 'FullScreen']
+         'Indent', 'Outdent', '|', 'CreateLink','CreateTable','|',
+          'ClearFormat', 'Print', 'SourceCode', '|', 'FullScreen']
  };
   constructor(private _courseService:CourseServiceService,private _route:Router) { }
 
   ngOnInit(): void {
   }
   addCourse(){
-
+console.log("On click");
     
     if(this.course.category=="Retail"){
 
       console.log("Add coures"+this.course.name);
       this._courseService.addRetailCourse(this.course);
       
-      this._route.navigate(['course1']);
+      this._route.navigate(['retailCourseList']);
       
 
     }

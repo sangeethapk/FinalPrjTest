@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CourseServiceService } from '../course-service.service';
 
 
@@ -10,7 +11,7 @@ import { CourseServiceService } from '../course-service.service';
 export class Course1Component implements OnInit {
 
 
-  data=[{
+  data={
     name:'',
     category:'',
     about:'',
@@ -30,17 +31,41 @@ export class Course1Component implements OnInit {
     img2:'',
     questionPaperLink:'',
     status:''
-  }]
-  constructor(private _courseService:CourseServiceService) { }
+  }
+  applicant={
+  
+    name:'',
+    phone:'',
+    email:'',
+    employed:'',
+    qualification:'',
+    messsage:''
+  };
+  course_name:any;
+  
+  constructor(private _courseService:CourseServiceService,private _router:Router) {console.log("test constructor") }
 
   ngOnInit(): void {
+     
 
-    console.log("Course 1: Detaila")
-    this._courseService.getRetailCourseDetails().subscribe((datanew: any) =>{
-      console.log(datanew[0].name);
+    this.course_name=localStorage.getItem("course_name");
+    console.log("Course 1: Details----"+this.course_name);
+    this._courseService.getRetailCoursesDetails(this.course_name).subscribe((datanew: any) =>{
+      console.log(datanew.name);
       this.data=datanew;
 
   });
+  }
 
-}
+
+
+
+
+  // ------------------------------------------------------------------------------------
+
+
+
+  
+  
+
 }

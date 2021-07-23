@@ -34,7 +34,7 @@
            <div class="form-group">
             <label for="sponserimage">Course Sponsered by</label>
             <input type="text" class="form-control" id="sponserimage" name="sponserimage"  [(ngModel)] ="course.sponserimage" required>
-                      
+            <!-- <ejs-richtexteditor [toolbarSettings]='tools'  required id="sponserimage" name="sponserimage" [(ngModel)] ="course.sponserimage"></ejs-richtexteditor>         -->
            </div>
            <div class="form-group">
             <label for="knowledgePartnerimage">Knowledge Partner</label>
@@ -63,14 +63,21 @@
            </div> -->
            <div class="form-group">
             <label for="hidhlights" class="my-2">Course Highlights</label>
-            <input type="text" class="form-control" id="highlights" name="highlights" [(ngModel)] ="course.highlights" required>
-                      
+            <!-- <input type="text" class="form-control" id="highlights" name="highlights" [(ngModel)] ="course.highlights" required> -->
+            <ejs-richtexteditor [toolbarSettings]='tools'  required id="highlights" name="highlights" [(ngModel)] ="course.highlights"></ejs-richtexteditor>         
            </div>
 
            <div class="form-group">
             <label for="eligibility" class="my-2">Eligibility</label>
             <!-- <input type="text" class="form-control" id="eligibility" name="eligibility" [(ngModel)] ="course.eligibility" required> -->
             <ejs-richtexteditor [toolbarSettings]='tools'  required id="eligibility" name="eligibility" [(ngModel)] ="course.eligibility"></ejs-richtexteditor>         
+           </div>
+
+
+           <div class="form-group">
+            <label for="age" class="my-2">Age</label>
+             <input type="text" class="form-control" id="age" name="age" [(ngModel)] ="course.age" required>
+            <!-- <ejs-richtexteditor [toolbarSettings]='tools'  required id="eligibility" name="eligibility" [(ngModel)] ="course.eligibility"></ejs-richtexteditor>          -->
            </div>
            
            <div class="form-group">
@@ -121,6 +128,12 @@
                 <option value="Closed">Closed</option>
               </select>
           </div> 
+
+          <div class="form-group">
+            <label for="brochureTitle" class="my-2">BrouchreTitle</label>
+             <input type="text" class="form-control" id="brochureTitle" name="brochureTitle" [(ngModel)] ="course.brochureTitle" required> 
+            <!-- <ejs-richtexteditor [toolbarSettings]='tools'  required id="eligibility" name="eligibility" [(ngModel)] ="course.eligibility"></ejs-richtexteditor>          -->
+           </div>
           <!-- <div class="form-group">
             <ejs-richtexteditor  required name="name" [(ngModel)]=""></ejs-richtexteditor>
             

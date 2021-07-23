@@ -1,44 +1,4 @@
-<!-- 
 
-
-<div class="card mx-4">
-    <h2 class="mx-2">Retail Borchure Requests</h2>
-    <div class="card-body mx-2">
-      <h5 class="card-title">Retail Course Request</h5>
-      <table class=" card-table table table-success table-bordered" id='excel-table'>
-        <thead>
-          <tr >
-            <th scope="col">#</th>
-            <th scope="col">Submition Date</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Highest Qualification</th>
-            <th scope="col">Are you Employed?</th>
-            <th scope="col">Message</th>
-            
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let info of data;let ndx = index">
-            <td>{{ndx+1}}</td>
-            <td>{{info.submittedDate|date:'short'}}</td>
-            <td>{{info.name}}</td>
-            <td>{{info.email}}</td>
-            <td>{{info.phone}}</td>
-            <td>{{info.highest_qualification}}</td>
-            <td>{{info.employed}}</td>
-            <td>{{info.messsage}}</td>
-           
-          </tr>
-        
-        </tbody>
-      </table>
-      <a href="#" class="btn btn-primary" (click)=exportToExcel() >Download Excel</a>
-    </div>
-  </div>
-
----------------------------------------------------------------------------------------- -->
 <div class="mx-auto bg-grey-400">
   <!--Screen-->
   <div class="min-h-screen flex flex-col">
@@ -53,7 +13,7 @@
                   <a href="" class="text-white p-2 mr-2 no-underline hidden md:block lg:block">Log Out</a>
 
 
-                  <img (click)="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="https://avatars0.githubusercontent.com/u/4323180?s=460&v=4" alt="">
+                  <img (click)="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="" alt="Admin">
                   <!-- <a href="#" (click)="profileToggle()" class="text-white p-2 no-underline hidden md:block lg:block">Adaministrator</a>
                   <div id="ProfileDropDown" class="rounded hidden shadow-md bg-white absolute pin-t mt-12 mr-1 pin-r">
                       <ul class="list-reset">
@@ -91,31 +51,22 @@
                       </a>
                   </li>
                   <li class="w-full h-full py-3 px-2 border-b border-light-border">
-                    <!-- <a href="tables.html"
-                       class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                        <i class="fas fa-table float-left mx-2"></i>
-                        Add Course
-                        <span><i class="fa fa-angle-right float-right"></i></span>
-                    </a> -->
-
-
-                    <div class="dropup">
-                      <button class="dropbtn">Add Course</button>
-                      <div class="dropup-content">
-                        <a routerLink="add-course">Retail</a>
-                        <a href="#">Instutional</a>
-                        <a href="#">Corporate</a>
+                       <div class="dropup">
+                          
+                          <button class="dropbtn">Add Course</button>
+                          <div class="dropup-content">
+                            <a routerLink="add-course">Retail</a>
+                            <a href="add-course">Instutional</a>
+                            <a href="add-course">Corporate</a>
+                          </div>
+                      
                       </div>
-                    </div>
-                    
+                        </li>
+                      </ul>
+                      
+                      </aside>
+                      </div>
 
-                </li>
-                </ul> 
-                 
-            
-
-          </aside>
-          <!--/Sidebar-->
           <!--Main-->
           <main class="bg-white-300 flex-1 p-3 overflow-hidden">
 
@@ -206,7 +157,7 @@
                                        
                                       </tr>
                                     
-                                    <tr> <td colspan="2"><button class="btn btn-primary" (click)=exportToExcel()>Download Excel</button></td></tr>
+                                    <tr> <td colspan="3"><button class="btn btn-primary" style="font-weight: bold;color: darkgoldenrod;" (click)=exportToExcel()>Download Excel</button></td></tr>
                                   </tbody>
                               </table>
                           </div>
@@ -332,13 +283,3 @@
           </main>
           <!--/Main-->
       </div>
-      <!--Footer-->
-      <footer class="bg-grey-darkest text-white p-2">
-          <div class="flex flex-1 mx-auto">&copy; My Design</div>
-          <div class="flex flex-1 mx-auto">Distributed by:  <a href="https://themewagon.com/" target=" _blank">Themewagon</a></div>
-      </footer>
-      <!--/footer-->
-
-  </div>
-
-</div>

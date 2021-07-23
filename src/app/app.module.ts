@@ -13,6 +13,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { Course1Component } from './course1/course1.component';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
+import { RetailCourseListComponent } from './retail-course-list/retail-course-list.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeComponent } from './home/home.component';
 // import { faSun as farSun, faStar as farStar, faMoon as farMoon} from '@fortawesome/free-regular-svg-icons';
 // import { faSun as fasSun, faStar as fasStar, faMoon as fasMoon } from '@fortawesome/free-solid-svg-icons';
 // import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
@@ -25,7 +28,9 @@ import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor'
     RetailComponent,
     AdminComponent,
     AddCourseComponent,
-    Course1Component
+    Course1Component,
+    RetailCourseListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,8 @@ import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor'
     HttpClientModule,
     FontAwesomeModule,
     RichTextEditorAllModule,
-    FormsModule
+    FormsModule,
+    NgbModule
    
   ],
   providers: [],
