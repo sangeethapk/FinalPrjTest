@@ -8,7 +8,7 @@ import { RetailCourseListComponent } from './retail-course-list/retail-course-li
 import { RetailComponent } from './retail/retail.component';
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
+  {path:'',component:RetailCourseListComponent},
   {path:'admin',component:AdminComponent},
   {path:'admin/add-course',component:AddCourseComponent},
   {path:'course1',component:Course1Component},
