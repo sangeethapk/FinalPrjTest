@@ -41,26 +41,13 @@ t:any;
   let  type=localStorage.getItem("type");
   
 this.t=type;
-   if(type==="Retail"){
+   
 
      console.log("Retail course list : "+this.t);
     this._courseService.getRetailCourses().subscribe((data:any)=>{
       this.data=JSON.parse(JSON.stringify(data));
     });
-    }
-    else if(type==="Institutional"){
-      console.log("Inside Institutional course list"+this.t);
-      this._courseService.getInstitutionalCourses().subscribe((data:any)=>{
-        this.data=JSON.parse(JSON.stringify(data));
-      });
-    }
-    else{
-      console.log("Inside Corporate course list:"+this.t);
-      this._courseService.getCorporateCourses().subscribe((data:any)=>{
-        this.data=JSON.parse(JSON.stringify(data));
-      });
-
-    }
+   
    }
 
 

@@ -38,6 +38,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { CourselistComponent } from './admin/courselist/courselist.component';
 import { UpdateCourseComponent } from './admin/update-course/update-course.component';
+import { InstitutionalcourselistComponent } from './admin/institutionalcourselist/institutionalcourselist.component';
+import { CorporatecourselistComponent } from './admin/corporatecourselist/corporatecourselist.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,8 @@ import { UpdateCourseComponent } from './admin/update-course/update-course.compo
     ReportsComponent,
     CourselistComponent,
     UpdateCourseComponent,
+    InstitutionalcourselistComponent,
+    CorporatecourselistComponent
 
   ],
   imports: [

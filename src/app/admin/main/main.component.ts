@@ -24,13 +24,15 @@ export class MainComponent implements OnInit {
   {
     console.log("main getInstitutionallist");
     localStorage.setItem("type","Institutional");
-     this._router.navigate(["./courselist"],{ relativeTo: this.route });
+    this._router.navigate(["./instituionalcourselist"],{ relativeTo: this.route});
+    
   }
   getCorporateCourseList(){
 
     console.log("main getCorporatelist");
     localStorage.setItem("type","Corporate");
-    this._router.navigate(["./courselist"],{ relativeTo: this.route});
+    this._router.navigate(["./corporatecourselist"],{ relativeTo: this.route });
+   
   }
 
 }

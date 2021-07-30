@@ -6,8 +6,10 @@ import { AddinstitutionalcourseComponent } from './admin/addinstitutionalcourse/
 import { AddretailcourseComponent } from './admin/addretailcourse/addretailcourse.component';
 
 import { BrochureRequestComponent } from './admin/brochure-request/brochure-request.component';
+import { CorporatecourselistComponent } from './admin/corporatecourselist/corporatecourselist.component';
 import { CourselistComponent } from './admin/courselist/courselist.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { InstitutionalcourselistComponent } from './admin/institutionalcourselist/institutionalcourselist.component';
 import { MainComponent } from './admin/main/main.component';
 import { ReportsComponent } from './admin/reports/reports.component';
 import { UpdateCourseComponent } from './admin/update-course/update-course.component';
@@ -51,8 +53,16 @@ const routes: Routes = [
  {
   path: 'updateretailcourse',
   component: UpdateRetailCourseComponent
-}
+},
    
+{
+  path: 'corporatecourselist',
+  component:CorporatecourselistComponent
+},
+{
+  path: 'instituionalcourselist',
+  component:InstitutionalcourselistComponent
+}
   ]
 
    },
