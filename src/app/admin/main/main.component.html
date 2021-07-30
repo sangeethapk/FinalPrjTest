@@ -1,0 +1,59 @@
+
+<mat-toolbar color="primary" class="example-toolbar">
+
+    <button (click)="sidenav_opened = !sidenav_opened" 
+
+    style="border-radius: px;
+
+    box-shadow: 0 8px 16px 0 rgba(248, 240, 240, 0.2), 0 6px 20px 0 #eed9d930;"
+
+    ><mat-icon>menu</mat-icon></button>    
+
+</mat-toolbar>
+
+ 
+
+<mat-sidenav-container style="background-color: white; color: black; min-height: 400px;">
+
+<mat-sidenav [(opened)]="sidenav_opened"  #sidenav mode="side" style="background-color: white; border-right: rgb(145, 140, 140) solid 2px;" >
+
+        <mat-nav-list>
+
+ 
+
+            <a mat-list-item routerLink="dashboard" style="color: black;"> Dashboard <mat-icon>arrow_right</mat-icon></a>
+
+            <a mat-list-item routerLink="reports"  style="color: black;">Requests <mat-icon>arrow_right</mat-icon></a>
+
+            <a mat-list-item routerLink="addinstitutionalcourse"  style="color: black;">Add  Institutional Courses<mat-icon>arrow_right</mat-icon> </a>
+            <a mat-list-item routerLink="addretailcourse"  style="color: black;">Add Retail Course <mat-icon>arrow_right</mat-icon></a>
+             <a mat-list-item routerLink="addcorporatecourse"  style="color: black;">Add  Corporate Courses<mat-icon>arrow_right</mat-icon> </a>
+             <a mat-list-item (click)="getRetailCourseList()"  style="color: black;">Retail Course List<mat-icon>arrow_right</mat-icon></a>
+             <a mat-list-item (click)="getInstitutionalCourseList()"  style="color: black;">Institutional Course List<mat-icon>arrow_right</mat-icon></a>
+             <a mat-list-item (click)="getCorporateCourseList()"  style="color: black;">Corporate Course List<mat-icon>arrow_right</mat-icon></a>
+            
+                     
+
+          </mat-nav-list>
+
+    
+
+</mat-sidenav>
+
+<mat-sidenav-content>
+
+    <div style="margin: 20px;min-height: 400px;">
+
+ 
+
+            <router-outlet></router-outlet>
+
+    </div>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
+
+

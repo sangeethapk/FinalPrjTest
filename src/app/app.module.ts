@@ -3,45 +3,80 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RetailComponent } from './retail/retail.component';
-import { AdminComponent } from './admin/admin.component';
+
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider';
+
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddCourseComponent } from './add-course/add-course.component';
-import { Course1Component } from './course1/course1.component';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { RetailCourseListComponent } from './retail-course-list/retail-course-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
+import { MainComponent } from './admin/main/main.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { AddretailcourseComponent } from './admin/addretailcourse/addretailcourse.component';
+import { BrochureRequestComponent } from './admin/brochure-request/brochure-request.component';
+import { AddinstitutionalcourseComponent } from './admin/addinstitutionalcourse/addinstitutionalcourse.component';
+import { AddcorporatecourseComponent } from './admin/addcorporatecourse/addcorporatecourse.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule} from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
+import { ReportsComponent } from './admin/reports/reports.component';
 // import { faSun as farSun, faStar as farStar, faMoon as farMoon} from '@fortawesome/free-regular-svg-icons';
 // import { faSun as fasSun, faStar as fasStar, faMoon as fasMoon } from '@fortawesome/free-solid-svg-icons';
 // import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 // import { faStackOverflow, faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
 
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+import {MatSelectModule} from '@angular/material/select';
+import { CourselistComponent } from './admin/courselist/courselist.component';
+import { UpdateCourseComponent } from './admin/update-course/update-course.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RetailComponent,
-    AdminComponent,
-    AddCourseComponent,
-    Course1Component,
+    AddCourseComponent,    
     RetailCourseListComponent,
-    HomeComponent
+    HomeComponent,
+    MainComponent,
+    DashboardComponent,
+    AddretailcourseComponent,
+    BrochureRequestComponent,
+    AddinstitutionalcourseComponent,
+    AddcorporatecourseComponent,
+    ReportsComponent,
+    CourselistComponent,
+    UpdateCourseComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSliderModule,
-    HttpClientModule,
+     HttpClientModule,
     FontAwesomeModule,
     RichTextEditorAllModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatFormFieldModule,
+    
+     MatSelectModule
+
+    
+
    
   ],
   providers: [],

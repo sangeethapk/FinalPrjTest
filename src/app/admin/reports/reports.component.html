@@ -1,0 +1,145 @@
+<!-- Card Sextion Starts Here -->
+<div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-0 py-2">
+
+    <!-- card -->
+
+    <div class="rounded overflow-hidden shadow bg-white mx-2 w-full">
+        <div class="px-5 py-2 border-b border-light-grey">
+            <div class="font-bold text-xl py-4" style="text-align: center;font-family: cursive;">Instutional Course Brochure Requests 
+
+                <button mat-raised-button color="primary"  class="mx-5" (click)=exportToExcel()>Download Excel</button>
+            </div>
+        </div>
+        <div class="table-responsive px-5 mx-5" >
+            <table class="table text-grey-darkest" id='excel-table'>
+                <thead class="bg-grey-dark text-normal">
+                   <tr >
+                      <th scope="col">#</th>
+                      <th scope="col">Date of Submition</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Highest Qualification</th>
+                      <th scope="col">Are you Employed?</th>
+                      <th scope="col">Message</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let info of data;let ndx = index">
+                      <td>{{ndx+1}}</td>
+                      <td>{{info.submittedDate|date:'short'}}</td>
+                      <td>{{info.name}}</td>
+                      <td>{{info.email}}</td>
+                      <td>{{info.phone}}</td>
+                      <td>{{info.highest_qualification}}</td>
+                      <td>{{info.employed}}</td>
+                      <td>{{info.messsage}}</td>
+                     
+                    </tr>
+                  
+                  
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- /card -->
+
+</div>
+
+<div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-0 py-2">
+
+    <!-- card -->
+
+    <div class="rounded overflow-hidden shadow bg-white mx-2 w-full">
+        <div class="px-6 py-2 border-b border-light-grey">
+            <div class="font-bold text-xl py-4" style="text-align: center;font-family: cursive;">Retail Brochure Requests 
+
+                <button mat-raised-button color="primary"  class="mx-5" (click)=exportToExcel()>Download Excel</button>
+            </div>
+        </div>
+        <div class="table-responsive px-5 mx-5" >
+            <table class="table text-grey-darkest" id='excel-table'>
+                <thead class="bg-grey-dark text-normal">
+                   <tr >
+                      <th scope="col">#</th>
+                      <th scope="col">Date of Submition</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Highest Qualification</th>
+                      <th scope="col">Are you Employed?</th>
+                      <th scope="col">Message</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let info of data;let ndx = index">
+                      <td>{{ndx+1}}</td>
+                      <td>{{info.submittedDate|date:'short'}}</td>
+                      <td>{{info.name}}</td>
+                      <td>{{info.email}}</td>
+                      <td>{{info.phone}}</td>
+                      <td>{{info.highest_qualification}}</td>
+                      <td>{{info.employed}}</td>
+                      <td>{{info.messsage}}</td>
+                     
+                    </tr>
+                  
+                  
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- /card -->
+    <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-0 py-2">
+
+        <!-- card -->
+
+        <div class="rounded overflow-hidden shadow bg-white mx-2 w-full">
+            <div class="px-6 py-2 border-b border-light-grey">
+                <div class="font-bold text-xl py-4" style="text-align: center;font-family: cursive;">Corporate Course Brochure Requests 
+
+                    <button mat-raised-button color="primary"  class="mx-5" (click)=exportToExcel()>Download Excel</button>
+                </div>
+            </div>
+            <div class="table-responsive px-5 mx-5" >
+                <table class="table text-grey-darkest" id='excel-table'>
+                    <thead class="bg-grey-dark text-normal">
+                       <tr >
+                          <th scope="col">#</th>
+                          <th scope="col">Date of Submition</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Phone</th>
+                          <th scope="col">Highest Qualification</th>
+                          <th scope="col">Are you Employed?</th>
+                          <th scope="col">Message</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let info of data;let ndx = index">
+                          <td>{{ndx+1}}</td>
+                          <td>{{info.submittedDate|date:'short'}}</td>
+                          <td>{{info.name}}</td>
+                          <td>{{info.email}}</td>
+                          <td>{{info.phone}}</td>
+                          <td>{{info.highest_qualification}}</td>
+                          <td>{{info.employed}}</td>
+                          <td>{{info.messsage}}</td>
+                         
+                        </tr>
+                      
+                      
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /card -->
+
+    </div>
+
+
+</div>
+
