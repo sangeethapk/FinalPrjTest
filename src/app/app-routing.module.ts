@@ -12,8 +12,11 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { InstitutionalcourselistComponent } from './admin/institutionalcourselist/institutionalcourselist.component';
 import { MainComponent } from './admin/main/main.component';
 import { ReportsComponent } from './admin/reports/reports.component';
-import { UpdateCourseComponent } from './admin/update-course/update-course.component';
-import { UpdateRetailCourseComponent } from './admin/update-retail-course/update-retail-course.component';
+
+import { UpdatecorporateComponent } from './admin/updatecorporate/updatecorporate.component';
+import { UpdateinstitutionalComponent } from './admin/updateinstitutional/updateinstitutional.component';
+import { UpdateretailComponent } from './admin/updateretail/updateretail.component';
+
 
 import { RetailCourseListComponent } from './retail-course-list/retail-course-list.component';
 
@@ -42,19 +45,23 @@ const routes: Routes = [
       component: CourselistComponent
    },
    {
-    path: 'updatecourse', 
-    redirectTo: 'updatecourse', 
+    path: 'updateRetailCourse', 
+    redirectTo: 'updateRetailCourse', 
     pathMatch: 'full'
  },
    {
-    path: 'updatecourse',
-    component: UpdateCourseComponent
+    path: 'updateRetailCourse',
+    component:UpdateretailComponent
+ },
+  {
+    path: 'updateInstitutionalCourse',
+    component:UpdateinstitutionalComponent
  },
  {
-  path: 'updateretailcourse',
-  component: UpdateRetailCourseComponent
+  path: 'updateCorporateCourse',
+  component:UpdatecorporateComponent
 },
-   
+    
 {
   path: 'corporatecourselist',
   component:CorporatecourselistComponent

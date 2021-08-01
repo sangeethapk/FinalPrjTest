@@ -63,7 +63,7 @@ getRetailCoursesDetails(name:any){
 }
 getInstitutionalCoursesDeatils(course_name:any){
       
-  return this.http.get("http://localhost:3000/getaInstitutionalCourseDetails/"+course_name);
+  return this.http.get("http://localhost:3000/getInstitutionalCourseDetails/"+course_name);
 }
 getCorporateCourses(){
       
@@ -94,8 +94,25 @@ deleteCourse(name:any){
 }
 updateRetailCourse(course:any){
   console.log("inside course service"+course);
-  const oldcoursename=localStorage.getItem("oldcoursename");
+  let oldcoursename=localStorage.getItem("oldcoursename");
   return this.http.put("http://localhost:3000/retailcourseupdate/"+oldcoursename,course)
+ .subscribe(data =>{console.log(data)})
+
+
+}
+
+updateCorporateCourse(course:any){
+  console.log("inside course service"+course);
+  let oldcoursename=localStorage.getItem("oldcoursename");
+  return this.http.put("http://localhost:3000/corporatecourseupdate/"+oldcoursename,course)
+ .subscribe(data =>{console.log(data)})
+
+
+}
+updateInstitutionalCourse(course:any){
+  console.log("inside course service"+course);
+  let oldcoursename=localStorage.getItem("oldcoursename");
+  return this.http.put("http://localhost:3000/institutionalcourseupdate/"+oldcoursename,course)
  .subscribe(data =>{console.log(data)})
 
 

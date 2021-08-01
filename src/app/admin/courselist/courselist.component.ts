@@ -66,17 +66,14 @@ this.t=type;
 
 editCourse(name:any){
   
+ // alert("editCoursefunction"+name);
   localStorage.setItem("oldcoursename",name); 
 
+alert(localStorage.getItem("oldcoursename"));
 
-  let type=localStorage.getItem("type");
-  if(type==="Retail")
-  {
+ 
     this._router.navigate(['../updateRetailCourse'],{ relativeTo: this.route });
-  }
-  else{
-  this._router.navigate(['../updatecourse'],{ relativeTo: this.route });
-  }
+  
  }
 
   

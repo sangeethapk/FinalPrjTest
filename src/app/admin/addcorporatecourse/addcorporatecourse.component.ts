@@ -56,7 +56,7 @@ export class AddcorporatecourseComponent implements OnInit {
         this._courseService.addCorporateCourse(this.course);
         
         localStorage.setItem("type","Corporate");
-        this._route.navigate(['CorporateCourseList']);
+        this._route.navigate(['corporatecourselist']);
         
   
       

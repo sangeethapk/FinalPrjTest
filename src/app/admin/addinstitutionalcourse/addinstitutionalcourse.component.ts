@@ -56,7 +56,7 @@ export class AddinstitutionalcourseComponent implements OnInit {
         this._courseService.addInstitutionalCourse(this.course);
         
         localStorage.setItem("type","Institutional")
-        this._route.navigate(['institutionalCourseList']);
+        this._route.navigate(['instituionalcourselist']);
         
   
       

@@ -67,7 +67,7 @@ editCourse(name:any){
 
 
   
-    this._router.navigate(['../updateCorporateCourse'],{ relativeTo: this.route });
+    this._router.navigate(['../updateInstitutionalCourse'],{ relativeTo: this.route });
 
   
   

@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CourseServiceService } from 'src/app/course-service.service';
 
-
 @Component({
-  selector: 'app-addretailcourse',
-  templateUrl: './addretailcourse.component.html',
-  styleUrls: ['./addretailcourse.component.css']
+  selector: 'app-updatecorporate',
+  templateUrl: './updatecorporate.component.html',
+  styleUrls: ['./updatecorporate.component.css']
 })
-export class AddretailcourseComponent implements OnInit {
+export class UpdatecorporateComponent implements OnInit {
 
   course={
     name:'',
-    category:'',
+  
     about:'',
     objective:'',
     sponserimage:'',
@@ -33,7 +32,6 @@ export class AddretailcourseComponent implements OnInit {
     status:'',
     brochureTitle:''
   }
-  
   public tools: object = {
     items: [
            'Bold', 'Italic', 'Underline', 'StrikeThrough', '|',
@@ -43,25 +41,32 @@ export class AddretailcourseComponent implements OnInit {
            'Indent', 'Outdent', '|', 'CreateLink','CreateTable','|',
             'ClearFormat', 'Print', 'SourceCode', '|', 'FullScreen']
    };
-    constructor(private _courseService:CourseServiceService,private _route:Router) { }
-  
-    ngOnInit(): void {
-    }
-    addCourse(){
-  console.log("On click");
-      
+
+  constructor(private courservice:CourseServiceService,private router:Router,private route:ActivatedRoute) { }
+
+ngOnInit(): void {
      
+  alert(localStorage.getItem("oldcoursename"));
+    const oldcoursename=localStorage.getItem("oldcoursename");
+   // alert(oldcoursename);
+    
+    this.courservice.getCorporateCoursesDeatils(oldcoursename).subscribe((data)=>{
+      this.course=JSON.parse(JSON.stringify(data));
+      alert(this.course.name);
+      console.log("Inside update corporate :"+this.course);
+
+
+  });
+
+}
+updateCourse(){
+this.courservice.updateCorporateCourse(this.course);
+ 
+  this.router.navigate(['../dashboard'],{ relativeTo: this.route });
+
   
-        console.log("Add coures"+this.course.name);
-        this._courseService.addRetailCourse(this.course);
-        localStorage.setItem("type","Retail")
-        
-        this._route.navigate(['courselist']);
-        
-  
-      
-  
-    }
-  
+
+}
+
 
 }
