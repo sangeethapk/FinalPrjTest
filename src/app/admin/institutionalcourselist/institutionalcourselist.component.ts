@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CourseServiceService } from 'src/app/course-service.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from 'src/app/confirm-dialog/confirm-dialog.component';
+
 
 @Component({
   selector: 'app-institutionalcourselist',
@@ -32,7 +35,7 @@ export class InstitutionalcourselistComponent implements OnInit {
   }];
  
 t:any;
-  constructor(private _courseService:CourseServiceService,private _router:Router,private route:ActivatedRoute) { }
+  constructor(private _courseService:CourseServiceService,private _router:Router,private route:ActivatedRoute,private dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -51,11 +54,23 @@ this.t=type;
    deleteCourse(name:any){
       
    
-  this._courseService.deleteCourse(name)
-    .subscribe((data) => {
-      this.data = this.data.filter(b => b !== name);
-      //this.books = JSON.parse(JSON.stringify(data));
-      
+    const confirmDialog = this.dialog.open(ConfirmDialogComponent, {
+      data: {
+        title: 'Confirm Delete Course',
+       
+      }
+    });
+    confirmDialog.afterClosed().subscribe(result => {
+      if (result === true) {
+       
+        this._courseService.deleteCourse(name)
+        .subscribe((data) => {
+          this.data = this.data.filter(b => b !== name);
+          //this.books = JSON.parse(JSON.stringify(data));
+          window. location. reload();
+        
+        });
+      }
     });
 
 }

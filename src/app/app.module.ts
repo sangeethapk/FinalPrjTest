@@ -52,8 +52,11 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 
+
+
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { CoursedetailsComponent } from './coursedetails/coursedetails.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 
 
@@ -77,7 +80,8 @@ import { CoursedetailsComponent } from './coursedetails/coursedetails.component'
     UpdatecorporateComponent,
     UpdateinstitutionalComponent,
     LoginComponent,
-    CoursedetailsComponent
+    CoursedetailsComponent,
+    ConfirmDialogComponent
     
   
   ],
