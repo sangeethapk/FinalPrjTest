@@ -53,6 +53,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { CoursedetailsComponent } from './coursedetails/coursedetails.component';
 
 
 
@@ -75,7 +76,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     UpdateretailComponent,
     UpdatecorporateComponent,
     UpdateinstitutionalComponent,
-    LoginComponent
+    LoginComponent,
+    CoursedetailsComponent
     
   
   ],

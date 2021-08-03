@@ -101,8 +101,9 @@ status:''}];
   getDetails(name:any){
     console.log("inside retailcourselist:"+name);
     //alert("hello");
+    localStorage.setItem("type","Retail");
     localStorage.setItem("course_name",name);
-    this._router.navigate(['course1']);
+    this._router.navigate(['coursedetails']);
 
 
 

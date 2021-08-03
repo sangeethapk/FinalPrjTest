@@ -17,6 +17,7 @@ import { ReportsComponent } from './admin/reports/reports.component';
 import { UpdatecorporateComponent } from './admin/updatecorporate/updatecorporate.component';
 import { UpdateinstitutionalComponent } from './admin/updateinstitutional/updateinstitutional.component';
 import { UpdateretailComponent } from './admin/updateretail/updateretail.component';
+import { CoursedetailsComponent } from './coursedetails/coursedetails.component';
 
 
 import { RetailCourseListComponent } from './retail-course-list/retail-course-list.component';
@@ -25,6 +26,8 @@ import { RetailCourseListComponent } from './retail-course-list/retail-course-li
 const routes: Routes = [
   {path:'',component:RetailCourseListComponent},
   {path:'login',component:LoginComponent},
+  {path:'coursedetails',component:CoursedetailsComponent},
+
  
   {path:'retailCourseList',component:CourselistComponent},
   {path:'admin',component:MainComponent,
