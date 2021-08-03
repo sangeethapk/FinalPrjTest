@@ -25,9 +25,9 @@
 
             <a mat-list-item routerLink="reports"  style="color: black;">Requests <mat-icon>arrow_right</mat-icon></a>
 
-            <a mat-list-item routerLink="addinstitutionalcourse"  style="color: black;">Add  Institutional Courses<mat-icon>arrow_right</mat-icon> </a>
-            <a mat-list-item routerLink="addretailcourse"  style="color: black;">Add Retail Course <mat-icon>arrow_right</mat-icon></a>
-             <a mat-list-item routerLink="addcorporatecourse"  style="color: black;">Add  Corporate Courses<mat-icon>arrow_right</mat-icon> </a>
+            <a mat-list-item routerLink="./addinstitutionalcourse"   style="color: black;">Add  Institutional Courses<mat-icon>arrow_right</mat-icon> </a>
+            <a mat-list-item routerLink="./addretailcourse"  style="color: black;">Add Retail Course <mat-icon>arrow_right</mat-icon></a>
+             <a mat-list-item (click)="addcorporatecourse()"  style="color: black;">Add  Corporate Courses<mat-icon>arrow_right</mat-icon> </a>
              <a mat-list-item (click)="getRetailCourseList()"  style="color: black;">Retail Course List<mat-icon>arrow_right</mat-icon></a>
              <a mat-list-item (click)="getInstitutionalCourseList()"  style="color: black;">Institutional Course List<mat-icon>arrow_right</mat-icon></a>
              <a mat-list-item (click)="getCorporateCourseList()"  style="color: black;">Corporate Course List<mat-icon>arrow_right</mat-icon></a>

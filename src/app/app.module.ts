@@ -10,8 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AddCourseComponent } from './add-course/add-course.component';
-import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
+
+
 import { RetailCourseListComponent } from './retail-course-list/retail-course-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
@@ -43,13 +43,23 @@ import { CorporatecourselistComponent } from './admin/corporatecourselist/corpor
 import { UpdateretailComponent } from './admin/updateretail/updateretail.component';
 import { UpdatecorporateComponent } from './admin/updatecorporate/updatecorporate.component';
 import { UpdateinstitutionalComponent } from './admin/updateinstitutional/updateinstitutional.component';
+import { LoginComponent } from './admin/login/login.component';
+
+
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
+
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddCourseComponent,    
+     
     RetailCourseListComponent,
     HomeComponent,
     MainComponent,
@@ -64,7 +74,8 @@ import { UpdateinstitutionalComponent } from './admin/updateinstitutional/update
     CorporatecourselistComponent,
     UpdateretailComponent,
     UpdatecorporateComponent,
-    UpdateinstitutionalComponent
+    UpdateinstitutionalComponent,
+    LoginComponent
     
   
   ],
@@ -74,7 +85,6 @@ import { UpdateinstitutionalComponent } from './admin/updateinstitutional/update
     BrowserAnimationsModule,
      HttpClientModule,
     FontAwesomeModule,
-    RichTextEditorAllModule,
     FormsModule,
     NgbModule,
     MatToolbarModule,
@@ -84,8 +94,13 @@ import { UpdateinstitutionalComponent } from './admin/updateinstitutional/update
     MatButtonModule,
     MatMenuModule,
     MatFormFieldModule,
-    MatSelectModule
- 
+    MatSelectModule,
+    MatCardModule,
+    MatDialogModule,
+    MatInputModule, 
+    MatTableModule,
+    MatProgressSpinnerModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

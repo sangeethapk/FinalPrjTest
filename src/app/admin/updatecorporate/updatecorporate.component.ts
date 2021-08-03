@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CourseServiceService } from 'src/app/course-service.service';
+import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-updatecorporate',
@@ -9,6 +10,8 @@ import { CourseServiceService } from 'src/app/course-service.service';
 })
 export class UpdatecorporateComponent implements OnInit {
 
+  editor = ClassicEditorBuild;
+   ckeConfig: any;
   course={
     name:'',
   
@@ -32,19 +35,30 @@ export class UpdatecorporateComponent implements OnInit {
     status:'',
     brochureTitle:''
   }
-  public tools: object = {
-    items: [
-           'Bold', 'Italic', 'Underline', 'StrikeThrough', '|',
-           'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
-           'LowerCase', 'UpperCase', '|', 'Undo', 'Redo', '|',
-           'Formats', 'Alignments', '|', 'OrderedList', 'UnorderedList', '|',
-           'Indent', 'Outdent', '|', 'CreateLink','CreateTable','|',
-            'ClearFormat', 'Print', 'SourceCode', '|', 'FullScreen']
-   };
+ 
 
   constructor(private courservice:CourseServiceService,private router:Router,private route:ActivatedRoute) { }
 
 ngOnInit(): void {
+
+  this.ckeConfig = {
+    toolbar: {
+      items: ['heading', '|', 'bold', 'italic', '|', 'bulletedList',
+        'numberedList', '|', 'insertTable', '|', 'undo', 'redo', 'imageUpload',
+        ' classicEditor', 'blockQuote', 'list', 'mediaEmbed', 'pasteFromOffice',
+        'fontFamily', 'todoList', 'youtube'
+      ]
+    },
+    table: {
+      contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells']
+    },
+  };
+
+
+
+
+
+  //---------------------
      
   alert(localStorage.getItem("oldcoursename"));
     const oldcoursename=localStorage.getItem("oldcoursename");

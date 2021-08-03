@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CourseServiceService } from 'src/app/course-service.service';
+import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-addinstitutionalcourse',
@@ -9,7 +10,8 @@ import { CourseServiceService } from 'src/app/course-service.service';
 })
 export class AddinstitutionalcourseComponent implements OnInit {
 
-  
+  editor = ClassicEditorBuild;
+   ckeConfig: any;
   course={
     name:'',
    
@@ -34,18 +36,24 @@ export class AddinstitutionalcourseComponent implements OnInit {
     brochureTitle:''
   }
   
-  public tools: object = {
-    items: [
-           'Bold', 'Italic', 'Underline', 'StrikeThrough', '|',
-           'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
-           'LowerCase', 'UpperCase', '|', 'Undo', 'Redo', '|',
-           'Formats', 'Alignments', '|', 'OrderedList', 'UnorderedList', '|',
-           'Indent', 'Outdent', '|', 'CreateLink','CreateTable','|',
-            'ClearFormat', 'Print', 'SourceCode', '|', 'FullScreen']
-   };
-    constructor(private _courseService:CourseServiceService,private _route:Router) { }
+  
+    constructor(private _courseService:CourseServiceService,private _route:Router,private route:ActivatedRoute) { }
   
     ngOnInit(): void {
+
+      this.ckeConfig = {
+        toolbar: {
+          items: ['heading', '|', 'bold', 'italic', '|', 'bulletedList',
+            'numberedList', '|', 'insertTable', '|', 'undo', 'redo', 'imageUpload',
+            ' classicEditor', 'blockQuote', 'list', 'mediaEmbed', 'pasteFromOffice',
+            'fontFamily', 'todoList', 'youtube'
+          ]
+        },
+        table: {
+          contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells']
+        },
+      };
+
     }
     addCourse(){
   console.log("On click");
@@ -56,9 +64,9 @@ export class AddinstitutionalcourseComponent implements OnInit {
         this._courseService.addInstitutionalCourse(this.course);
         
         localStorage.setItem("type","Institutional")
-        this._route.navigate(['instituionalcourselist']);
+      //  this._route.navigate(['instituionalcourselist']);
         
-  
+      this._route.navigate(['../instituionalcourselist'],{ relativeTo: this.route });
       
   
     }

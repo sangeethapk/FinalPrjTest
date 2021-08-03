@@ -22,6 +22,7 @@
               </select>
                       
            </div>
+
            <div class="form-group">
             <label for="about">About the Program</label>
             <textarea class="form-control" id="about" name="about"  [(ngModel)] ="course.about" required></textarea>
@@ -35,7 +36,7 @@
            <div class="form-group">
             <label for="sponserimage">Course Sponsered by</label>
             <input type="text" class="form-control" id="sponserimage" name="sponserimage"  [(ngModel)] ="course.sponserimage" required>
-            
+            <!-- <ejs-richtexteditor [toolbarSettings]='tools'  required id="sponserimage" name="sponserimage" [(ngModel)] ="course.sponserimage"></ejs-richtexteditor>         -->
            </div>
            <div class="form-group">
             <label for="knowledgePartnerimage">Knowledge Partner</label>
@@ -57,47 +58,66 @@
             <textarea class="form-control" id="agenda" name="agenda" [(ngModel)] ="course.agenda" required></textarea>
                       
            </div>
-          
+           <!-- <div class="form-group">
+            <label for="hidhlights">Course Highlights</label>
+            <input type="text" class="form-control" id="highlights" name="highlights" [(ngModel)] ="course.highlights" required>
+                      
+           </div> -->
            <div class="form-group">
             <label for="hidhlights" class="my-2">Course Highlights</label>
-           
-            <ejs-richtexteditor [toolbarSettings]='tools'  required id="highlights" name="highlights" [(ngModel)] ="course.highlights"></ejs-richtexteditor>         
+            <!-- <input type="text" class="form-control" id="highlights" name="highlights" [(ngModel)] ="course.highlights" required> -->
+            <!-- <ejs-richtexteditor [toolbarSettings]='tools'  required id="highlights" name="highlights" [(ngModel)] ="course.highlights"></ejs-richtexteditor>          -->
+            <ckeditor name="myckeditor" [(ngModel)]="course.highlights" debounce="300" [editor]="editor" name="content">
+            </ckeditor>
            </div>
 
            <div class="form-group">
             <label for="eligibility" class="my-2">Eligibility</label>
-           
-            <ejs-richtexteditor [toolbarSettings]='tools'  required id="eligibility" name="eligibility" [(ngModel)] ="course.eligibility"></ejs-richtexteditor>         
+            <!-- <input type="text" class="form-control" id="eligibility" name="eligibility" [(ngModel)] ="course.eligibility" required> -->
+            <!-- <ejs-richtexteditor [toolbarSettings]='tools'  required id="eligibility" name="eligibility" [(ngModel)] ="course.eligibility"></ejs-richtexteditor>          -->
+            <ckeditor name="myckeditor" [(ngModel)]="course.eligibility" debounce="300" [editor]="editor" name="content">
+            </ckeditor>
            </div>
 
 
            <div class="form-group">
             <label for="age" class="my-2">Age</label>
              <input type="text" class="form-control" id="age" name="age" [(ngModel)] ="course.age" required>
-           
+            <!-- <ejs-richtexteditor [toolbarSettings]='tools'  required id="eligibility" name="eligibility" [(ngModel)] ="course.eligibility"></ejs-richtexteditor>          -->
+            <!-- <ckeditor name="myckeditor" [(ngModel)]="course.age" debounce="300" [editor]="editor" name="content">
+            </ckeditor> -->
            </div>
            
            <div class="form-group">
             <label for="title" class="my-2">Entrance Test Details</label>
-            
-            <ejs-richtexteditor [toolbarSettings]='tools'  required id="test" name="test" [(ngModel)] ="course.test"></ejs-richtexteditor>      
+            <!-- <input type="text" class="form-control" id="test" name="test" [(ngModel)] ="course.test" required> -->
+            <!-- <ejs-richtexteditor [toolbarSettings]='tools'  required id="test" name="test" [(ngModel)] ="course.test"></ejs-richtexteditor>       -->
+            <ckeditor name="myckeditor" [(ngModel)]="course.test" debounce="300" [editor]="editor" name="content">
+            </ckeditor>
            </div>
           
            <div class="form-group">
             <label for="title" class="my-2">Course Fee</label>
-            
-            <ejs-richtexteditor [toolbarSettings]='tools'  required id="courseFee" name="courseFee" [(ngModel)] ="course.courseFee"></ejs-richtexteditor>         
+            <!-- <input type="text" class="form-control" id="courseFee" name="courseFee" [(ngModel)] ="course.courseFee" required> -->
+            <!-- <ejs-richtexteditor [toolbarSettings]='tools'  required id="courseFee" name="courseFee" [(ngModel)] ="course.courseFee"></ejs-richtexteditor>          -->
+            <ckeditor name="myckeditor" [(ngModel)]="course.courseFee" debounce="300" [editor]="editor" name="content">
+            </ckeditor>
            </div>
            <div class="form-group">
-           
+            <!-- <label for="refundPolicy">Refund Policy</label>
+            <input type="text" class="form-control" id="refundPolicy" name="refundPolicy" [(ngModel)] ="course.refundPolicy" required> -->
             <label for="refundPolicy" class="my-2">Refund Policy</label>
-            <ejs-richtexteditor [toolbarSettings]='tools'  required id="refundPolicy" name="refundPolicy" [(ngModel)] ="course.refundPolicy"></ejs-richtexteditor>
+            <!-- <ejs-richtexteditor [toolbarSettings]='tools'  required id="refundPolicy" name="refundPolicy" [(ngModel)] ="course.refundPolicy"></ejs-richtexteditor> -->
+            <ckeditor name="myckeditor" [(ngModel)]="course.refundPolicy" debounce="300" [editor]="editor" name="content">
+            </ckeditor>
 
            </div>
            <div class="form-group">
             <label for="importantDates">Important Dates</label>
-           
-            <ejs-richtexteditor [toolbarSettings]='tools'  required id="importantDates" name="importantDates" [(ngModel)] ="course.importantDates"></ejs-richtexteditor>        
+            <!-- <input type="text" class="form-control" id="importantDates" name="importantDates" [(ngModel)] ="course.importantDates" required> -->
+            <!-- <ejs-richtexteditor [toolbarSettings]='tools'  required id="importantDates" name="importantDates" [(ngModel)] ="course.importantDates"></ejs-richtexteditor>         -->
+            <ckeditor name="myckeditor" [(ngModel)]="course.importantDates" debounce="300" [editor]="editor" name="content">
+            </ckeditor>
            </div>
           
            <div class="form-group">
@@ -128,15 +148,21 @@
           <div class="form-group">
             <label for="brochureTitle" class="my-2">BrochureTitle</label>
              <input type="text" class="form-control" id="brochureTitle" name="brochureTitle" [(ngModel)] ="course.brochureTitle" required> 
-           
+            <!-- <ejs-richtexteditor [toolbarSettings]='tools'  required id="eligibility" name="eligibility" [(ngModel)] ="course.eligibility"></ejs-richtexteditor>          -->
            </div>
-         
+          <!-- <div class="form-group">
+            <ejs-richtexteditor  required name="name" [(ngModel)]=""></ejs-richtexteditor>
+            
+        </div>  
+           -->
           <button type="submit" [disabled]='updatecourseform.form.invalid' class="btn btn btn-primary m-2">
             Update
           </button>
         </form>
-      
       </div>
+      </div>
+      </div>
+           
       
 
 

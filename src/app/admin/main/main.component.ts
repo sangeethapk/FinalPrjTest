@@ -12,6 +12,22 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  addinstitutionalcourse(){
+    this._router.navigate(['addinstitutionalcourse'],{ relativeTo: this.route });
+
+  }
+
+  addcorporatecourse(){
+
+    this._router.navigate(['addcorporatecourse'],{ relativeTo: this.route });
+
+  }
+
+  addretailcourse(){
+    this._router.navigate(['addretailcourse'],{ relativeTo: this.route });
+
+  }
   
   getRetailCourseList(){
     console.log("main getRetaillist");

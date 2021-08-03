@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddCourseComponent } from './add-course/add-course.component';
+
 import { AddcorporatecourseComponent } from './admin/addcorporatecourse/addcorporatecourse.component';
 import { AddinstitutionalcourseComponent } from './admin/addinstitutionalcourse/addinstitutionalcourse.component';
 import { AddretailcourseComponent } from './admin/addretailcourse/addretailcourse.component';
@@ -10,6 +10,7 @@ import { CorporatecourselistComponent } from './admin/corporatecourselist/corpor
 import { CourselistComponent } from './admin/courselist/courselist.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { InstitutionalcourselistComponent } from './admin/institutionalcourselist/institutionalcourselist.component';
+import { LoginComponent } from './admin/login/login.component';
 import { MainComponent } from './admin/main/main.component';
 import { ReportsComponent } from './admin/reports/reports.component';
 
@@ -23,11 +24,12 @@ import { RetailCourseListComponent } from './retail-course-list/retail-course-li
 
 const routes: Routes = [
   {path:'',component:RetailCourseListComponent},
+  {path:'login',component:LoginComponent},
  
   {path:'retailCourseList',component:CourselistComponent},
   {path:'admin',component:MainComponent,
   children:[
-    {path:'',redirectTo: 'dashboard',
+    {path:'',redirectTo:'dashboard',
     pathMatch: 'full' },
     {path:'dashboard',component:DashboardComponent},
     {path:'brochure',component:BrochureRequestComponent},

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CourseServiceService } from 'src/app/course-service.service';
+import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-updateretail',
@@ -9,6 +10,9 @@ import { CourseServiceService } from 'src/app/course-service.service';
 })
 export class UpdateretailComponent implements OnInit {
 
+
+  editor = ClassicEditorBuild;
+  ckeConfig: any;
     course={
     name:'',
     category:'',
@@ -46,6 +50,22 @@ export class UpdateretailComponent implements OnInit {
 
 ngOnInit(): void {
      
+  this.ckeConfig = {
+    toolbar: {
+      items: ['heading', '|', 'bold', 'italic', '|', 'bulletedList',
+        'numberedList', '|', 'insertTable', '|', 'undo', 'redo', 'imageUpload',
+        ' classicEditor', 'blockQuote', 'list', 'mediaEmbed', 'pasteFromOffice',
+        'fontFamily', 'todoList', 'youtube'
+      ]
+    },
+    table: {
+      contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells']
+    },
+  };
+
+
+
+  //----------------
   alert(localStorage.getItem("oldcoursename"));
     const oldcoursename=localStorage.getItem("oldcoursename");
    // alert(oldcoursename);
