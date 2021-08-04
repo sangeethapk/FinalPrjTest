@@ -66,13 +66,13 @@ ngOnInit(): void {
 
 
   //----------------
-  alert(localStorage.getItem("oldcoursename"));
+ // alert(localStorage.getItem("oldcoursename"));
     const oldcoursename=localStorage.getItem("oldcoursename");
    // alert(oldcoursename);
     
     this.courservice.getRetailCoursesDetails(oldcoursename).subscribe((data)=>{
       this.course=JSON.parse(JSON.stringify(data));
-      alert(this.course.name);
+     // alert(this.course.name);
       console.log("Inside update retail :"+this.course);
 
 

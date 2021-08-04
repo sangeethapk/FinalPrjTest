@@ -66,7 +66,7 @@ ngOnInit(): void {
     
     this.courservice.getCorporateCoursesDeatils(oldcoursename).subscribe((data)=>{
       this.course=JSON.parse(JSON.stringify(data));
-      alert(this.course.name);
+      //alert(this.course.name);
       console.log("Inside update corporate :"+this.course);
 
 

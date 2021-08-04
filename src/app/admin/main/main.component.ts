@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -6,9 +6,13 @@ import { Router,ActivatedRoute } from '@angular/router';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit,OnDestroy {
   sidenav_opened=true;
   constructor(private _router:Router,private route:ActivatedRoute) { }
+  ngOnDestroy() {
+    console.log("Destroyed...");
+    localStorage.removeItem("token");
+  }
 
   ngOnInit(): void {
   }
