@@ -1,4 +1,4 @@
- <div class="container-fluid my-5" style=" height: 450px;width: 100%;">
+ <!-- <div class="container-fluid my-5" style=" height: 450px;width: 100%;">
         
         <h3 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Administrator Log In</h3>
          <div class="row">   
@@ -29,5 +29,23 @@
          
         </div>
     </div> 
-   
-  
+    -->
+  <!-- ------------------------------New----------------------------------- -->
+  <div class="container h-100">
+<div class="row align-items-center h-100">
+    <div class="col-5 mx-auto">
+        <div>
+            <img id="profile-img" class="rounded-circle profile-img-card" src="https://www.wisdomjobs.com/careertips/what-are-admin-executive-roles-and-responsibilities.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form  class="form-signin" #loginform="ngForm" (ngSubmit)="loginUser()">
+                
+              
+              
+                <input type="password" id="inputPassword" name="password" [(ngModel)]="user.password"  class="form-control form-group  mx-5" placeholder="password" required autofocus>
+                <label id="passwordErrorlbl" style="color: red;" name="passwordErrorlbl">{{passwordErrorlbl}}</label><br>
+                <button class="btn btn-lg btn-primary btn-block btn-signin my-2 py-2 mx-5" type="submit" id="loginbtn" [disabled]=loginform.form.invalid>enter</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

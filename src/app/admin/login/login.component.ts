@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
     username:'',
     password:''
   }
-  error=""
-  passwordError=""
+  error="";
+  passwordErrorlbl="";
 
   ngOnInit(): void {
    // this.nav.hide();
@@ -28,41 +28,17 @@ export class LoginComponent implements OnInit {
   }
   loginUser(){
     this.error="";
-    console.log("Login Component method");
-    // this.courseservice.authenticateLogin(this.user)
-    // .subscribe(res=>{
-     
-    //   console.log("Status from server");
-    //   if(this.user.username=="admin"&&this.user.password=="Admin123")
-    //   {
-    //       localStorage.setItem("token",res.token);
-    //   }
-     
-    //   this.router.navigate(["/admin"]);
     
-    // },
-    //     (error) => {                              //Error callback
-    //       console.error('error caught in component')
-    //       const errorMessage = error;
-    //      const  loading = false;
-    //      if(error.status==403)
-    //      this.error="User does not exist";
-    //      else if(error.status==401)
-    //      this.passwordError="Invalid Password";
-    //      else 
-    //        this.error=error;
-
-    //      console.log(errorMessage);
-         
-       // });
-
-       if(this.user.username=="admin"&&this.user.password=="Admin123")
+    console.log("Login Component method");
+   
+       if(this.user.password=="Admin123")
        {
+         localStorage.setItem("token","token");
         this.router.navigate(["/admin"]);
        }
        else{
 
-        this.passwordError="Invalid Username or Password";
+        this.passwordErrorlbl="Invalid Password";
        }
       
       

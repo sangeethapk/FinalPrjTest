@@ -23,26 +23,57 @@
     <hr>
   </div>-->
 
-
-  <section id="gallery1">
-    <div class="container">
-        
-           <div class="row my-5">  
-            <div class="col-lg-4 mb-4" *ngFor="let course of mst">
-                <div class="card">
-                    <a href="#" class="btn btn-outline-success btn-sm">
-                        <img src="{{course.img1}}" alt="" class="card-img-top">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">{{course.name}}</h5>
-                        <p class="card-text">{{course.about}}</p>
-                        <a (click)='getDetails(course.name)' class="btn btn-outline-success btn-sm">Read More</a>
-
-                    </div>
-                </div>
-            </div>
-            </div>
-            </div>
-            </section>
   
   
+            <mat-tab-group animationDuration="2000ms">
+             <mat-tab label="Long-Term Training" >
+
+
+                <section id="gallery1">
+                  <div class="container">
+                      
+                         <div class="row my-5">  
+                          <div class="col-lg-4 mb-4" *ngFor="let course of ltt">
+                              <div class="card">
+                                  <a href="#" class="btn btn-outline-success btn-sm">
+                                      <img src="{{course.img1}}" alt="" class="card-img-top">
+                                  </a>
+                                  <div class="card-body">
+                                      <h5 class="card-title">{{course.name}}</h5>
+                                      <p class="card-text">{{course.about}}</p>
+                                      <a (click)='getDetails(course.name)' class="btn btn-outline-success btn-sm">Read More</a>
+              
+                                  </div>
+                              </div>
+                          </div>
+                          </div>
+                          </div>
+                          </section>
+
+              </mat-tab>
+              <mat-tab label="Micro Skill Training">
+
+                <section id="gallery1">
+                  <div class="container">
+                      
+                         <div class="row my-5">  
+                          <div class="col-lg-4 mb-4" *ngFor="let course of mst">
+                              <div class="card">
+                                  <a href="#" class="btn btn-outline-success btn-sm">
+                                      <img src="{{course.img1}}" alt="" class="card-img-top">
+                                  </a>
+                                  <div class="card-body">
+                                      <h5 class="card-title">{{course.name}}</h5>
+                                      <p class="card-text">{{course.about}}</p>
+                                      <a (click)='getDetails(course.name)' class="btn btn-outline-success btn-sm">Read More</a>
+              
+                                  </div>
+                              </div>
+                          </div>
+                          </div>
+                          </div>
+                          </section>
+
+              </mat-tab>
+              
+            </mat-tab-group>

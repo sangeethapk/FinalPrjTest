@@ -52,6 +52,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
@@ -106,6 +108,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     MatInputModule, 
     MatTableModule,
     MatProgressSpinnerModule,
+    MatTabsModule,
     CKEditorModule
   ],
   providers: [],

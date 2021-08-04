@@ -17,6 +17,7 @@ import { ReportsComponent } from './admin/reports/reports.component';
 import { UpdatecorporateComponent } from './admin/updatecorporate/updatecorporate.component';
 import { UpdateinstitutionalComponent } from './admin/updateinstitutional/updateinstitutional.component';
 import { UpdateretailComponent } from './admin/updateretail/updateretail.component';
+import { AuthGuard } from './auth.guard';
 import { CoursedetailsComponent } from './coursedetails/coursedetails.component';
 
 
@@ -27,10 +28,11 @@ const routes: Routes = [
   {path:'',component:RetailCourseListComponent},
   {path:'login',component:LoginComponent},
   {path:'coursedetails',component:CoursedetailsComponent},
+ {path:'home',component:RetailCourseListComponent},
 
  
   {path:'retailCourseList',component:CourselistComponent},
-  {path:'admin',component:MainComponent,
+  {path:'admin',component:MainComponent,canActivate:[AuthGuard],
   children:[
     {path:'',redirectTo:'dashboard',
     pathMatch: 'full' },

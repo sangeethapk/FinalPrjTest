@@ -12,3 +12,6 @@ a:hover, a:active{
     padding-left: 6px;
 
 }
+.example-spacer {
+  flex: 1 1 auto;
+}

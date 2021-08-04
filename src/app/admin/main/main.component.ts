@@ -13,6 +13,12 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logout(){
+
+    this._router.navigate(['../login'],{ relativeTo: this.route });
+    localStorage.removeItem("token");
+  }
+
   addinstitutionalcourse(){
     this._router.navigate(['addinstitutionalcourse'],{ relativeTo: this.route });
 

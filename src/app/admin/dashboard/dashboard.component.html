@@ -30,7 +30,7 @@
                     <i class="far fa-comment-alt text-warning fa-3x"></i>
                   </div>
                   <div class="text-end">
-                    <h3>156</h3>
+                    <h3>{{data1.length}}</h3>
                     <p class="mb-0">Total Instutional Course Request</p>
                   </div>
                 </div>
@@ -46,7 +46,7 @@
                     <i class="fas fa-chart-line text-success fa-3x"></i>
                   </div>
                   <div class="text-end">
-                    <h3>64.89 %</h3>
+                    <h3>{{data2.length}}</h3>
                     <p class="mb-0">Total Corporate Course Request</p>
                   </div>
                 </div>
@@ -103,7 +103,7 @@
 
         <div class="rounded overflow-hidden shadow bg-white mx-2 w-full">
             <div class="px-5 py-2 border-b border-light-grey">
-                <div class="font-bold text-xl py-4" style="text-align: center;font-family: cursive;">Instutional Course Brochure Requests 
+                <div class="font-bold text-xl py-4" style="text-align: center;font-family: cursive;">Retail Course Brochure Requests 
 
                     <button mat-raised-button color="primary"  class="mx-5" (click)=exportToExcel()>Download Excel</button>
                 </div>
@@ -151,13 +151,13 @@
 
         <div class="rounded overflow-hidden shadow bg-white mx-2 w-full">
             <div class="px-6 py-2 border-b border-light-grey">
-                <div class="font-bold text-xl py-4" style="text-align: center;font-family: cursive;">Retail Brochure Requests 
+                <div class="font-bold text-xl py-4" style="text-align: center;font-family: cursive;">Corporate Brochure Requests 
 
-                    <button mat-raised-button color="primary"  class="mx-5" (click)=exportToExcel()>Download Excel</button>
+                    <button mat-raised-button color="primary"  class="mx-5" (click)=exportToExcel1()>Download Excel</button>
                 </div>
             </div>
             <div class="table-responsive px-5 mx-5" >
-                <table class="table text-grey-darkest" id='excel-table'>
+                <table class="table text-grey-darkest" id='excel-table1'>
                     <thead class="bg-grey-dark text-normal">
                        <tr >
                           <th scope="col">#</th>
@@ -172,7 +172,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr *ngFor="let info of data;let ndx = index">
+                        <tr *ngFor="let info of data1;let ndx = index">
                           <td>{{ndx+1}}</td>
                           <td>{{info.submittedDate|date:'short'}}</td>
                           <td>{{info.name}}</td>
@@ -196,13 +196,13 @@
     
             <div class="rounded overflow-hidden shadow bg-white mx-2 w-full">
                 <div class="px-6 py-2 border-b border-light-grey">
-                    <div class="font-bold text-xl py-4" style="text-align: center;font-family: cursive;">Corporate Course Brochure Requests 
+                    <div class="font-bold text-xl py-4" style="text-align: center;font-family: cursive;">Instutional Course Brochure Requests 
     
-                        <button mat-raised-button color="primary"  class="mx-5" (click)=exportToExcel()>Download Excel</button>
+                        <button mat-raised-button color="primary"  class="mx-5" (click)=exportToExcel2()>Download Excel</button>
                     </div>
                 </div>
                 <div class="table-responsive px-5 mx-5" >
-                    <table class="table text-grey-darkest" id='excel-table'>
+                    <table class="table text-grey-darkest" id='excel-table2'>
                         <thead class="bg-grey-dark text-normal">
                            <tr >
                               <th scope="col">#</th>
@@ -217,7 +217,7 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr *ngFor="let info of data;let ndx = index">
+                            <tr *ngFor="let info of data2;let ndx = index">
                               <td>{{ndx+1}}</td>
                               <td>{{info.submittedDate|date:'short'}}</td>
                               <td>{{info.name}}</td>

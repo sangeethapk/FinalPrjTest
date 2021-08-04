@@ -8,6 +8,13 @@
     box-shadow: 0 8px 16px 0 rgba(248, 240, 240, 0.2), 0 6px 20px 0 #eed9d930;"
 
     ><mat-icon>menu</mat-icon></button>    
+    <span class="example-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu"><mat-icon>person</mat-icon></button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="logout()">Log Out</button>
+  
+</mat-menu>
+  
 
 </mat-toolbar>
 

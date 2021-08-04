@@ -23,6 +23,16 @@ export class CourseServiceService {
       
             return this.http.get("http://localhost:3000/display");
       }
+
+
+  getCorporateBrochure(){
+
+        return this.http.get("http://localhost:3000/displayCorporateRequest");
+  }
+  getInstitutionalBrochure(){
+      return this.http.get("http://localhost:3000/displayInstitutionalRequest");
+  }
+  //--------------------------------End Brochure--------    
  addRetailCourse(course:any){
         console.log("Servicce data for retail : "+course.name);
 
