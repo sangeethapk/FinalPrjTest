@@ -89,7 +89,7 @@ editCourse(name:any){
  // alert("editCoursefunction"+name);
   localStorage.setItem("oldcoursename",name); 
 
-alert(localStorage.getItem("oldcoursename"));
+//alert(localStorage.getItem("oldcoursename"));
 
  
     this._router.navigate(['../updateRetailCourse'],{ relativeTo: this.route });
