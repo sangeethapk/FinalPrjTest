@@ -1,41 +1,10 @@
- <!-- <div class="container-fluid my-5" style=" height: 450px;width: 100%;">
-        
-        <h3 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Administrator Log In</h3>
-         <div class="row">   
-             <div class="col-4">  
-             </div>
-            <div class="col-5">    
-        <form role="form" #loginform="ngForm" (ngSubmit)="loginUser()">
-          <div class="form-group">
-            <label for="userName">Username</label>
-            <input type="text" class="form-control" id="Name" name="username" [(ngModel)]="user.username" (focus))="clearText()" required>
-            <label style="color: crimson;" name="error" [(ngModel)]="error">{{error}}</label>
-            
-            </div>
-          <div class="form-group">
-            
-            <label for="inputPassword">Password</label>
-            <input type="password" class="form-control" id="inputPassword" name="password" [(ngModel)]="user.password"  required>
-            <label id="passwordErrorlbl" style="color: red;" name="passwordErrorlbl" [(ngModel)]="passwordError">{{passwordError}}</label>
-
-          </div>
-         
-          <button type="submit" id="loginbtn" [disabled]=loginform.form.invalid class="btn btn btn-primary">
-            Log In
-          </button>
-        </form>
-        </div>
-        <div class="col-3"></div>
-         
-        </div>
-    </div> 
-    -->
+ 
   <!-- ------------------------------New----------------------------------- -->
   <div class="container h-100">
 <div class="row align-items-center h-100">
     <div class="col-5 mx-auto">
         <div>
-            <img id="profile-img" class="rounded-circle profile-img-card" src="https://www.wisdomjobs.com/careertips/what-are-admin-executive-roles-and-responsibilities.png" />
+            <!-- <img id="profile-img" class="rounded-circle profile-img-card" src="https://www.techrepublic.com/a/hub/i/r/2019/02/14/4f571ee4-f9de-4f80-8028-e9981ca7c1b0/resize/1200x/7e814383fc5f43db8033047fc9f57c1e/istock-901609212datasecurity.jpg" /> -->
             <p id="profile-name" class="profile-name-card"></p>
             <form  class="form-signin" #loginform="ngForm" (ngSubmit)="loginUser()">
                 
