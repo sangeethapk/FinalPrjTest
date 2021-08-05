@@ -44,6 +44,8 @@ data2=[{
 }];
   constructor( private courseService:CourseServiceService) { 
     this.data=[];
+    this.data1=[];
+    this.data2=[];
 
       this.courseService.getRetailBrochure()
         .subscribe((datanew: any) =>{

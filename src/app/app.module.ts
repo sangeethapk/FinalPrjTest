@@ -51,7 +51,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
-
+import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTabsModule} from '@angular/material/tabs';
 
 
@@ -109,6 +109,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     MatTableModule,
     MatProgressSpinnerModule,
     MatTabsModule,
+    MatExpansionModule,
     CKEditorModule
   ],
   providers: [],

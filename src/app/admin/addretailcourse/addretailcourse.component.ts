@@ -62,6 +62,7 @@ export class AddretailcourseComponent implements OnInit {
   
         console.log("Add coures"+this.course.name);
         this._courseService.addRetailCourse(this.course);
+      
         localStorage.setItem("type","Retail")
         
        // this._route.navigate(['courselist']);
