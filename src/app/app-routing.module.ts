@@ -25,7 +25,7 @@ import { RetailCourseListComponent } from './retail-course-list/retail-course-li
 
 
 const routes: Routes = [
-  {path:'',component:RetailCourseListComponent},
+  {path:'',component:LoginComponent},
   {path:'login',component:LoginComponent},
   {path:'coursedetails',component:CoursedetailsComponent},
  {path:'home',component:RetailCourseListComponent},
