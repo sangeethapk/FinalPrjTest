@@ -15,28 +15,41 @@ export class CourseServiceService {
   retailBrouchreRequest(data:any){
   
 
-    return this.http.post("/api/insert",{"applicant":data})
+    return this.http.post("http://localhost:3000/insert",{"applicant":data})
     .subscribe(data =>{console.log(data)});
   }
 
+  institutionalBrouchreRequest(data:any){
+  
+
+    return this.http.post("http://localhost:3000/insertInstitutionalRequest",{"applicant":data})
+    .subscribe(data =>{console.log(data)});
+  }
+  corporateBrouchreRequest(data:any){
+  
+
+    return this.http.post("http://localhost:3000/insertCorporateRequest",{"applicant":data})
+    .subscribe(data =>{console.log(data)});
+  }
+  
   getRetailBrochure(){
       
-            return this.http.get("/api/display");
+            return this.http.get("http://localhost:3000/display");
       }
 
 
   getCorporateBrochure(){
 
-        return this.http.get("/api/displayCorporateRequest");
+        return this.http.get("http://localhost:3000/displayCorporateRequest");
   }
   getInstitutionalBrochure(){
-      return this.http.get("/api/displayInstitutionalRequest");
+      return this.http.get("http://localhost:3000/displayInstitutionalRequest");
   }
   //--------------------------------End Brochure--------    
  addRetailCourse(course:any){
         console.log("Servicce data for retail : "+course.name);
 
-        return this.http.post("/api/addRetailCourse",{"course":course})
+        return this.http.post("http://localhost:3000/addRetailCourse",{"course":course})
          .subscribe(data =>{console.log(data+"Data added successfully.....")});
 
 
@@ -44,7 +57,7 @@ export class CourseServiceService {
       addInstitutionalCourse(course:any){
         console.log("Servicce data for institutional : "+course.name);
 
-        return this.http.post("/api/addInstitutionalCourse",{"course":course})
+        return this.http.post("http://localhost:3000/addInstitutionalCourse",{"course":course})
         .subscribe(data =>{console.log(data+"Data added successfully.....")});
 
 
@@ -52,36 +65,36 @@ export class CourseServiceService {
       addCorporateCourse(course:any){
         console.log("Servicce data for corporate : "+course.name);
 
-        return this.http.post("/api/addCorporateCourse",{"course":course})
+        return this.http.post("http://localhost:3000/addCorporateCourse",{"course":course})
         .subscribe(data =>{console.log(data+"Data added successfully.....")});
 
 
       }
       getRetailCourses(){
       
-        return this.http.get("/api/getRetailCourseData");
+        return this.http.get("http://localhost:3000/getRetailCourseData");
   }
 
 getRetailCoursesDetails(name:any){
       
   console.log("Inside Course details request Service...");
-    return this.http.get("/api/getRetailCourseDetails/"+name);
+    return this.http.get("http://localhost:3000/getRetailCourseDetails/"+name);
 }
   getInstitutionalCourses(){
       
-    return this.http.get("/api/getInstitutionalCourseData");
+    return this.http.get("http://localhost:3000/getInstitutionalCourseData");
 }
 getInstitutionalCoursesDeatils(course_name:any){
       
-  return this.http.get("/api/getInstitutionalCourseDetails/"+course_name);
+  return this.http.get("http://localhost:3000/getInstitutionalCourseDetails/"+course_name);
 }
 getCorporateCourses(){
       
-  return this.http.get("/api/getCorporateCourseData");
+  return this.http.get("http://localhost:3000/getCorporateCourseData");
 }
 getCorporateCoursesDeatils(course_name:any){
       
-  return this.http.get("/api/getCorporateCourseDetails/"+course_name);
+  return this.http.get("http://localhost:3000/getCorporateCourseDetails/"+course_name);
 }
   
 
@@ -91,21 +104,21 @@ deleteCourse(name:any){
 
   let type=localStorage.getItem("type");
   if(type==="Retail"){
-    return this.http.delete("/api/retailcourse/"+name);
+    return this.http.delete("http://localhost:3000/retailcourse/"+name);
     
   }
   else if(type==="Institutional"){
-    return this.http.delete("/api/institutional/course/"+name);
+    return this.http.delete("http://localhost:3000/institutional/course/"+name);
   }
   else{
-    return this.http.delete("/api/corporate/course/"+name);
+    return this.http.delete("http://localhost:3000/corporate/course/"+name);
   }
  
 }
 updateRetailCourse(course:any){
   console.log("inside course service"+course);
   let oldcoursename=localStorage.getItem("oldcoursename");
-  return this.http.put("/api/retailcourseupdate/"+oldcoursename,course)
+  return this.http.put("http://localhost:3000/retailcourseupdate/"+oldcoursename,course)
  .subscribe(data =>{console.log(data)})
 
 
@@ -114,7 +127,7 @@ updateRetailCourse(course:any){
 updateCorporateCourse(course:any){
   console.log("inside course service"+course);
   let oldcoursename=localStorage.getItem("oldcoursename");
-  return this.http.put("/api/corporatecourseupdate/"+oldcoursename,course)
+  return this.http.put("http://localhost:3000/corporatecourseupdate/"+oldcoursename,course)
  .subscribe(data =>{console.log(data)})
 
 
@@ -122,7 +135,7 @@ updateCorporateCourse(course:any){
 updateInstitutionalCourse(course:any){
   console.log("inside course service"+course);
   let oldcoursename=localStorage.getItem("oldcoursename");
-  return this.http.put("/api/institutionalcourseupdate/"+oldcoursename,course)
+  return this.http.put("http://localhost:3000/institutionalcourseupdate/"+oldcoursename,course)
  .subscribe(data =>{console.log(data)})
 
 

@@ -94,11 +94,27 @@ status:''}];
       
     }
 
-
+//default 
+this.data=this.ltt;
 
   });
   }
-  getDetails(name:any){
+
+onlttClick(){
+
+this.data=this.ltt;
+
+}
+onmstClick(){
+  this.data=this.mst;
+
+}
+
+
+
+
+
+getDetails(name:any){
     console.log("inside retailcourselist:"+name);
     //alert("hello");
     localStorage.setItem("type","Retail");
