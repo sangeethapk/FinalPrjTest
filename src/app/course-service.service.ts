@@ -11,45 +11,46 @@ export class CourseServiceService {
  
   constructor(private http:HttpClient) { }
 
-
+server_address:string='/api';//for production
+//server_address:string="http://localhost:3000" //for development
   retailBrouchreRequest(data:any){
   
 
-    return this.http.post("http://localhost:3000/insert",{"applicant":data})
+    return this.http.post(`${this.server_address}/insert`,{"applicant":data})
     .subscribe(data =>{console.log(data)});
   }
 
   institutionalBrouchreRequest(data:any){
   
 
-    return this.http.post("http://localhost:3000/insertInstitutionalRequest",{"applicant":data})
+    return this.http.post(`${this.server_address}/insertInstitutionalRequest`,{"applicant":data})
     .subscribe(data =>{console.log(data)});
   }
   corporateBrouchreRequest(data:any){
   
 
-    return this.http.post("http://localhost:3000/insertCorporateRequest",{"applicant":data})
+    return this.http.post(`${this.server_address}/insertCorporateRequest`,{"applicant":data})
     .subscribe(data =>{console.log(data)});
   }
   
   getRetailBrochure(){
       
-            return this.http.get("http://localhost:3000/display");
+            return this.http.get(`${this.server_address}/display`);
       }
 
 
   getCorporateBrochure(){
 
-        return this.http.get("http://localhost:3000/displayCorporateRequest");
+        return this.http.get(`${this.server_address}/displayCorporateRequest`);
   }
   getInstitutionalBrochure(){
-      return this.http.get("http://localhost:3000/displayInstitutionalRequest");
+      return this.http.get(`${this.server_address}/displayInstitutionalRequest`);
   }
   //--------------------------------End Brochure--------    
  addRetailCourse(course:any){
         console.log("Servicce data for retail : "+course.name);
 
-        return this.http.post("http://localhost:3000/addRetailCourse",{"course":course})
+        return this.http.post(`${this.server_address}/addRetailCourse`,{"course":course})
          .subscribe(data =>{console.log(data+"Data added successfully.....")});
 
 
@@ -57,7 +58,7 @@ export class CourseServiceService {
       addInstitutionalCourse(course:any){
         console.log("Servicce data for institutional : "+course.name);
 
-        return this.http.post("http://localhost:3000/addInstitutionalCourse",{"course":course})
+        return this.http.post(`${this.server_address}/addInstitutionalCourse`,{"course":course})
         .subscribe(data =>{console.log(data+"Data added successfully.....")});
 
 
@@ -65,36 +66,36 @@ export class CourseServiceService {
       addCorporateCourse(course:any){
         console.log("Servicce data for corporate : "+course.name);
 
-        return this.http.post("http://localhost:3000/addCorporateCourse",{"course":course})
+        return this.http.post(`${this.server_address}/addCorporateCourse`,{"course":course})
         .subscribe(data =>{console.log(data+"Data added successfully.....")});
 
 
       }
       getRetailCourses(){
       
-        return this.http.get("http://localhost:3000/getRetailCourseData");
+        return this.http.get(`${this.server_address}/getRetailCourseData`);
   }
 
 getRetailCoursesDetails(name:any){
       
   console.log("Inside Course details request Service...");
-    return this.http.get("http://localhost:3000/getRetailCourseDetails/"+name);
+    return this.http.get(`${this.server_address}/getRetailCourseDetails/`+name);
 }
   getInstitutionalCourses(){
       
-    return this.http.get("http://localhost:3000/getInstitutionalCourseData");
+    return this.http.get(`${this.server_address}/getInstitutionalCourseData`);
 }
 getInstitutionalCoursesDeatils(course_name:any){
       
-  return this.http.get("http://localhost:3000/getInstitutionalCourseDetails/"+course_name);
+  return this.http.get(`${this.server_address}/getInstitutionalCourseDetails/`+course_name);
 }
 getCorporateCourses(){
       
-  return this.http.get("http://localhost:3000/getCorporateCourseData");
+  return this.http.get(`${this.server_address}/getCorporateCourseData`);
 }
 getCorporateCoursesDeatils(course_name:any){
       
-  return this.http.get("http://localhost:3000/getCorporateCourseDetails/"+course_name);
+  return this.http.get(`${this.server_address}/getCorporateCourseDetails/`+course_name);
 }
   
 
@@ -104,21 +105,21 @@ deleteCourse(name:any){
 
   let type=localStorage.getItem("type");
   if(type==="Retail"){
-    return this.http.delete("http://localhost:3000/retailcourse/"+name);
+    return this.http.delete(`${this.server_address}/retailcourse/`+name);
     
   }
   else if(type==="Institutional"){
-    return this.http.delete("http://localhost:3000/institutional/course/"+name);
+    return this.http.delete(`${this.server_address}/institutional/course/`+name);
   }
   else{
-    return this.http.delete("http://localhost:3000/corporate/course/"+name);
+    return this.http.delete(`${this.server_address}/corporate/course/`+name);
   }
  
 }
 updateRetailCourse(course:any){
   console.log("inside course service"+course);
   let oldcoursename=localStorage.getItem("oldcoursename");
-  return this.http.put("http://localhost:3000/retailcourseupdate/"+oldcoursename,course)
+  return this.http.put(`${this.server_address}/retailcourseupdate/`+oldcoursename,course)
  .subscribe(data =>{console.log(data)})
 
 
@@ -127,7 +128,7 @@ updateRetailCourse(course:any){
 updateCorporateCourse(course:any){
   console.log("inside course service"+course);
   let oldcoursename=localStorage.getItem("oldcoursename");
-  return this.http.put("http://localhost:3000/corporatecourseupdate/"+oldcoursename,course)
+  return this.http.put(`${this.server_address}/corporatecourseupdate/`+oldcoursename,course)
  .subscribe(data =>{console.log(data)})
 
 
@@ -135,7 +136,7 @@ updateCorporateCourse(course:any){
 updateInstitutionalCourse(course:any){
   console.log("inside course service"+course);
   let oldcoursename=localStorage.getItem("oldcoursename");
-  return this.http.put("http://localhost:3000/institutionalcourseupdate/"+oldcoursename,course)
+  return this.http.put(`${this.server_address}/institutionalcourseupdate/`+oldcoursename,course)
  .subscribe(data =>{console.log(data)})
 
 
