@@ -11,8 +11,8 @@ export class CourseServiceService {
  
   constructor(private http:HttpClient) { }
 
-server_address:string='/api';//for production
-//server_address:string="http://localhost:3000" //for development
+//server_address:string='/api';//for production
+server_address:string="http://localhost:3000" //for development
   retailBrouchreRequest(data:any){
   
 
